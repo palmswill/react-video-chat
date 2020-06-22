@@ -15,7 +15,6 @@ io.on('connection', socket => {
     console.log("RegID", socket.id)
     io.sockets.emit("allUsers", users);
     socket.on('disconnect', () => {
-        console.log("disconnect", users[socket.id])
         delete users[socket.id];
     })
 
